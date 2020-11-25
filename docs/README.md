@@ -169,7 +169,7 @@ dfAHHPIH = dfAHHPIH.withColumn('7MA', avg("close").over(wma))
 
 ```
 
-8. Checking the columns 7MA and ticker for PIH
+8. Checking the columns **7MA** and ticker for **PIH**
 
 ```python
 
@@ -179,7 +179,7 @@ display(dfAHHPIH.filter(df['ticker'] =='PIH'))
 
 ![alt text](https://wittline.github.io/Moving-Average-Spark/images/3.png)
 
-9. Checking the columns 7MA and ticker for AHH
+9. Checking the columns **7MA** and ticker for **AHH**
 
 ```python
 
