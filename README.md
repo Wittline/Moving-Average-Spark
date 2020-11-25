@@ -1,14 +1,12 @@
 # Moving Average with Spark
 
-Working with moving averages will give us a better idea of the time series, due large historical trends are much easier to analyze with moving averages. Moving averages are frequently used in financial analysis and Oil and Gas operations.
- 
-In this repository I’ll use the data for daily stock prices of two particular companies
+Working with moving averages will give us a better idea of the time series, due large historical trends are much easier to analyze with moving averages. Moving averages are frequently used in financial analysis and Oil and Gas operations. In this repository I will use the data for daily stock prices of two particular companies
 
-The name of the company:  **ARMADA HOFFLER PROPERTIES, INC.**
-The sector of the company : **FINANCE**
-The industry of the company: **REAL ESTATE**
-The name of the exchange : **NYSE**
-The symbol for the stock: **AHH**
+ - The name of the company:  **ARMADA HOFFLER PROPERTIES, INC.**
+ - The sector of the company : **FINANCE**
+ - The industry of the company: **REAL ESTATE**
+ - The name of the exchange : **NYSE**
+ - The symbol for the stock: **AHH**
 
 **AND**
 
