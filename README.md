@@ -48,6 +48,8 @@ I will use the tool Databricks,  is the name of the data analytics platform base
  1. Due that Databricks Community Edition will not allow to upload files more than 1gb, the original dataset was splitted into 4 chunks, in order to upload the original dataset to Databricks.
  2. The script to divide the file into chunks is explained below, it was executed locally using Google Colab.
  
+```python
+
 import csv
 import os
 import sys
@@ -80,5 +82,7 @@ def split_csv(sfp, dest, prefix, size_chunk):
             if i == 0:
                 os.remove(t_filepath)
             fn += 1
+            
+```python            
 
  3. The chunks were stored into the next location in databricks: */FileStore/tables/kueski/*
