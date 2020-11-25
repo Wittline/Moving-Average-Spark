@@ -5,13 +5,9 @@ Working with moving averages will give us a better idea of the time series, due 
 In this repository I’ll use the data for daily stock prices of two particular companies
 
 The name of the company:  **ARMADA HOFFLER PROPERTIES, INC.**
-
 The sector of the company : **FINANCE**
-
 The industry of the company: **REAL ESTATE**
-
 The name of the exchange : **NYSE**
-
 The symbol for the stock: **AHH**
 
 
