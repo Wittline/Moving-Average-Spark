@@ -83,7 +83,7 @@ def split_csv(sfp, dest, prefix, size_chunk):
                 os.remove(t_filepath)
             fn += 1
   
-split_csv('/Python/Python37/data/historical_stock_prices.csv', '/Python/Python37/data/chunks/', 'historical_stock_prices_', 5300000)
+split_csv('/data/historical_stock_prices.csv', '/data/chunks/', 'historical_stock_prices_', 5300000)
 
 ```            
 
