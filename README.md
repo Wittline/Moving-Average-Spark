@@ -83,6 +83,6 @@ def split_csv(sfp, dest, prefix, size_chunk):
                 os.remove(t_filepath)
             fn += 1
             
-```python            
+```            
 
  3. The chunks were stored into the next location in databricks: */FileStore/tables/kueski/*
