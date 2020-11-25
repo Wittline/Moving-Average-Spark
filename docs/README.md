@@ -91,3 +91,97 @@ split_csv('/data/historical_stock_prices.csv', '/data/chunks/', 'historical_stoc
  3. The chunks were stored into the next location in databricks: */FileStore/tables/kueski/*
  
  ![alt text](https://wittline.github.io/Moving-Average-Spark/images/2.PNG)
+ 
+ 4. All the chunks will be read in the same execution and all records from different chunks will be part of the same dataframe, Initially **31347778** records were found.
+ 
+```python
+ 
+ file_location = "/FileStore/tables/kueski/"
+file_type = "csv"
+
+infer_schema = "true"
+first_row_is_header = "true"
+delimiter = ","
+customSchema = StructType([StructField('ticker', StringType(), True),
+                     StructField('open', DoubleType(), True),
+                     StructField('close', DoubleType(), True),
+                     StructField('adj_close', DoubleType(), False),
+                     StructField('low', DoubleType(), True),
+                     StructField('high', DoubleType(), True),
+                     StructField('volume', IntegerType(), True),
+                     StructField('date', DateType(), True)])
+
+df = spark.read.format(file_type) \
+               .option("header", first_row_is_header) \
+               .option("sep", delimiter) \
+               .schema(customSchema) \
+               .load(file_location)
+df1.printSchema()
+df.count()
+ 
+```
+
+5. The following scripts were used to observe and confirm the presence of duplicate records and drop them, after the execution **20973889** were found.
+
+```python
+
+df1=df.groupBy("ticker","open","close","adj_close", "low", "high", "volume", "date")
+      .count()
+      .filter("count > 1")
+df1.show(100)
+
+df = df.drop_duplicates()
+df.count()
+
+```
+
+5. The following was used to drop missing records, after the execution **20973744** were found.
+
+```python
+
+df = df.na.drop()
+df.count()
+
+```
+
+6. Filtering the original dataframe with the two companies mentioned above.
+
+
+```python
+
+dfAHHPIH = df.select("ticker", "close", "date").where("ticker =='AHH' OR  ticker == 'PIH'").orderBy("date", ascending=True)
+print(dfAHHPIH.count())
+
+```
+
+7. Now we are computing the moving average of the **close** by the ticker **AHH** and **PIH**, the **wma** function is the function that will be applied for each window of rows
+
+```python
+
+wma = Window.partitionBy('ticker') \
+                 .orderBy("date") \
+                 .rowsBetween(-7, 0)
+
+dfAHHPIH = dfAHHPIH.withColumn('7MA', avg("close").over(wma))
+
+```
+
+8. Checking the columns 7MA and ticker for PIH
+
+```python
+
+display(dfAHHPIH.filter(df['ticker'] =='PIH'))
+
+```
+
+![alt text](https://wittline.github.io/Moving-Average-Spark/images/3.PNG)
+
+9. Checking the columns 7MA and ticker for AHH
+
+```python
+
+display(dfAHHPIH.filter(df['ticker'] =='AHH'))
+
+```
+
+![alt text](https://wittline.github.io/Moving-Average-Spark/images/4.PNG)
