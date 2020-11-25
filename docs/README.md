@@ -177,7 +177,7 @@ display(dfAHHPIH.filter(df['ticker'] =='PIH'))
 
 ```
 
-![alt text](https://wittline.github.io/Moving-Average-Spark/images/3.PNG)
+![alt text](https://wittline.github.io/Moving-Average-Spark/images/3.png)
 
 9. Checking the columns 7MA and ticker for AHH
 
@@ -187,7 +187,7 @@ display(dfAHHPIH.filter(df['ticker'] =='AHH'))
 
 ```
 
-![alt text](https://wittline.github.io/Moving-Average-Spark/images/4.PNG)
+![alt text](https://wittline.github.io/Moving-Average-Spark/images/4.png)
 
 # Code
 
