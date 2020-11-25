@@ -82,7 +82,9 @@ def split_csv(sfp, dest, prefix, size_chunk):
             if i == 0:
                 os.remove(t_filepath)
             fn += 1
-            
+  
+split_csv('/Python/Python37/data/historical_stock_prices.csv', '/Python/Python37/data/chunks/', 'historical_stock_prices_', 5300000)
+
 ```            
 
  3. The chunks were stored into the next location in databricks: */FileStore/tables/kueski/*
