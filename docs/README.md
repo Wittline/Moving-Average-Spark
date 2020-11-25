@@ -149,7 +149,10 @@ df.count()
 
 ```python
 
-dfAHHPIH = df.select("ticker", "close", "date").where("ticker =='AHH' OR  ticker == 'PIH'").orderBy("date", ascending=True)
+dfAHHPIH = df.select("ticker", "close", "date")
+             .where("ticker =='AHH' OR  ticker == 'PIH'")
+             .orderBy("date", ascending=True)
+             
 print(dfAHHPIH.count())
 
 ```
@@ -185,3 +188,18 @@ display(dfAHHPIH.filter(df['ticker'] =='AHH'))
 ```
 
 ![alt text](https://wittline.github.io/Moving-Average-Spark/images/4.PNG)
+
+# Code
+
+**The databricks code is at the following URL:** [DataBricks Code](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/4857024062644808/1826184165225191/7879041059791212/latest.html)
+
+
+# Contributing and Feedback
+Any ideas or feedback about this repository?. Help me to improve it.
+
+# Authors
+- Created by <a href="https://www.linkedin.com/in/ramsescoraspe"><strong>Ramses Alexander Coraspe Valdez</strong></a>
+- Created on Nov, 2020
+
+# License
+This project is licensed under the terms of the MIT license.
