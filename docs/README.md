@@ -86,5 +86,8 @@ def split_csv(sfp, dest, prefix, size_chunk):
 split_csv('/data/historical_stock_prices.csv', '/data/chunks/', 'historical_stock_prices_', 5300000)
 
 ```            
+![alt text](https://wittline.github.io/Moving-Average-Spark/images/1.PNG)
 
  3. The chunks were stored into the next location in databricks: */FileStore/tables/kueski/*
+ 
+ ![alt text](https://wittline.github.io/Moving-Average-Spark/images/2.PNG)
