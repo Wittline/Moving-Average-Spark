@@ -10,11 +10,11 @@ Working with moving averages will give us a better idea of the time series, due 
 
 **AND**
 
-The name of the company:  **PROPERTY INSURANCE HOLDINGS, INC.**
-The sector of the company : **FINANCE**
-The industry of the company: **PROPERTY-CASUALTY INSURERS**
-The name of the exchange : **NASDAQ**
-The symbol for the stock: **PIH**
+ - The name of the company:  **PROPERTY INSURANCE HOLDINGS, INC.**
+ - The sector of the company : **FINANCE**
+ - The industry of the company: **PROPERTY-CASUALTY INSURERS**
+ - The name of the exchange : **NASDAQ**
+ - The symbol for the stock: **PIH**
 
 **The dataset is at the following URL:** [Daily Historical Stock Prices (1970 - 2018)](https://www.kaggle.com/ehallmar/daily-historical-stock-prices-1970-2018?select=historical_stock_prices.csv)
 
