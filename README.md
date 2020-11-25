@@ -21,6 +21,7 @@ Working with moving averages will give us a better idea of the time series, due 
 ## Definition
 
 The N-day moving average of a stock prices time series is defined as follows. Suppose we have our daily (close time) stock prices represented in a vector [p_1, p_2, ..., p_M], where M is the number of prices. Then, the N-day moving averages of this series is another series defined by
+
 [
 
 **(p_1 + p_2 + ... + p_N) / N**,
