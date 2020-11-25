@@ -10,7 +10,6 @@ The industry of the company: **REAL ESTATE**
 The name of the exchange : **NYSE**
 The symbol for the stock: **AHH**
 
-
 **AND**
 
 The name of the company:  **PROPERTY INSURANCE HOLDINGS, INC.**
