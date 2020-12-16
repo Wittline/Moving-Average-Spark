@@ -88,7 +88,7 @@ split_csv('/data/historical_stock_prices.csv', '/data/chunks/', 'historical_stoc
 ```            
 ![alt text](https://wittline.github.io/Moving-Average-Spark/images/1.PNG)
 
- 3. The chunks were stored into the next location in databricks: */FileStore/tables/kueski/*
+ 3. The chunks were stored into the next location in databricks: */FileStore/tables/..../*
  
  ![alt text](https://wittline.github.io/Moving-Average-Spark/images/2.PNG)
  
@@ -96,7 +96,7 @@ split_csv('/data/historical_stock_prices.csv', '/data/chunks/', 'historical_stoc
  
 ```python
  
- file_location = "/FileStore/tables/kueski/"
+ file_location = "/FileStore/tables/..../"
 file_type = "csv"
 
 infer_schema = "true"
