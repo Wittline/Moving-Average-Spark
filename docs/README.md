@@ -169,7 +169,17 @@ dfAHHPIH = dfAHHPIH.withColumn('7MA', avg("close").over(wma))
 
 ```
 
-8. Checking the columns **7MA** and ticker for **PIH**
+8. Knowing that the first 6 data points shouldn't have a moving average (not enough data for 7MA), we'll nullify them :
+
+```python
+
+dfAHHPIH = dfAHHPIH.withColumn("mid", monotonically_increasing_id()) \
+                        .withColumn("7MA", when(col("mid")<= 5, lit(None)).otherwise(col("7MA"))) \
+                        .drop("mid")
+
+```
+
+9. Checking the columns **7MA** and ticker for **PIH**
 
 ```python
 
@@ -179,7 +189,7 @@ display(dfAHHPIH.filter(df['ticker'] =='PIH'))
 
 ![alt text](https://wittline.github.io/Moving-Average-Spark/images/3.png)
 
-9. Checking the columns **7MA** and ticker for **AHH**
+10. Checking the columns **7MA** and ticker for **AHH**
 
 ```python
 
